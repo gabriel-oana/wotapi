@@ -45,7 +45,7 @@ class API:
         """
 
         if response.status_code == 200:
-            # ToDO: This needs a better implementation
+            # TODO: This needs a better implementation
             # Check the response for the correct responses.
 
             try:

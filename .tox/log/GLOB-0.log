@@ -1,0 +1,109 @@
+action: GLOB, msg: packaging
+cwd: /Users/gabriel/projects/wotapi
+cmd: /Users/gabriel/projects/wotapi/.venv/bin/python setup.py sdist --formats=zip --dist-dir .tox/dist
+running sdist
+running egg_info
+writing wotapi.egg-info/PKG-INFO
+writing dependency_links to wotapi.egg-info/dependency_links.txt
+writing requirements to wotapi.egg-info/requires.txt
+writing top-level names to wotapi.egg-info/top_level.txt
+reading manifest file 'wotapi.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'wotapi.egg-info/SOURCES.txt'
+running check
+creating wotapi-0.4.5
+creating wotapi-0.4.5/tests
+creating wotapi-0.4.5/tests/unit
+creating wotapi-0.4.5/tests/unit/orm
+creating wotapi-0.4.5/wotapi
+creating wotapi-0.4.5/wotapi.egg-info
+creating wotapi-0.4.5/wotapi/action
+creating wotapi-0.4.5/wotapi/orm
+creating wotapi-0.4.5/wotapi/utils
+copying files to wotapi-0.4.5...
+copying LICENSE -> wotapi-0.4.5
+copying README.md -> wotapi-0.4.5
+copying setup.py -> wotapi-0.4.5
+copying tests/__init__.py -> wotapi-0.4.5/tests
+copying tests/unit/__init__.py -> wotapi-0.4.5/tests/unit
+copying tests/unit/test_logger.py -> wotapi-0.4.5/tests/unit
+copying tests/unit/test_models.py -> wotapi-0.4.5/tests/unit
+copying tests/unit/test_wrapper.py -> wotapi-0.4.5/tests/unit
+copying tests/unit/orm/__init__.py -> wotapi-0.4.5/tests/unit/orm
+copying tests/unit/orm/test_player_personal_data.py -> wotapi-0.4.5/tests/unit/orm
+copying wotapi/__init__.py -> wotapi-0.4.5/wotapi
+copying wotapi/wotapi.py -> wotapi-0.4.5/wotapi
+copying wotapi.egg-info/PKG-INFO -> wotapi-0.4.5/wotapi.egg-info
+copying wotapi.egg-info/SOURCES.txt -> wotapi-0.4.5/wotapi.egg-info
+copying wotapi.egg-info/dependency_links.txt -> wotapi-0.4.5/wotapi.egg-info
+copying wotapi.egg-info/not-zip-safe -> wotapi-0.4.5/wotapi.egg-info
+copying wotapi.egg-info/requires.txt -> wotapi-0.4.5/wotapi.egg-info
+copying wotapi.egg-info/top_level.txt -> wotapi-0.4.5/wotapi.egg-info
+copying wotapi/action/__init__.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/access_token.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/account_id.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/player_achievements.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/player_personal_data.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/player_vehicles_data.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/tankopedia_achievements.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/tankopedia_badges.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/tankopedia_info.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/tankopedia_maps.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/tankopedia_vehicles.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/vehicles_achievements.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/action/vehicles_statistics.py -> wotapi-0.4.5/wotapi/action
+copying wotapi/orm/__init__.py -> wotapi-0.4.5/wotapi/orm
+copying wotapi/orm/data_model.py -> wotapi-0.4.5/wotapi/orm
+copying wotapi/utils/__init__.py -> wotapi-0.4.5/wotapi/utils
+copying wotapi/utils/api.py -> wotapi-0.4.5/wotapi/utils
+copying wotapi/utils/request_factory.py -> wotapi-0.4.5/wotapi/utils
+Writing wotapi-0.4.5/setup.cfg
+creating '.tox/dist/wotapi-0.4.5.zip' and adding 'wotapi-0.4.5' to it
+adding 'wotapi-0.4.5'
+adding 'wotapi-0.4.5/wotapi'
+adding 'wotapi-0.4.5/tests'
+adding 'wotapi-0.4.5/wotapi.egg-info'
+adding 'wotapi-0.4.5/PKG-INFO'
+adding 'wotapi-0.4.5/LICENSE'
+adding 'wotapi-0.4.5/README.md'
+adding 'wotapi-0.4.5/setup.py'
+adding 'wotapi-0.4.5/setup.cfg'
+adding 'wotapi-0.4.5/wotapi/utils'
+adding 'wotapi-0.4.5/wotapi/action'
+adding 'wotapi-0.4.5/wotapi/orm'
+adding 'wotapi-0.4.5/wotapi/__init__.py'
+adding 'wotapi-0.4.5/wotapi/wotapi.py'
+adding 'wotapi-0.4.5/wotapi/utils/__init__.py'
+adding 'wotapi-0.4.5/wotapi/utils/api.py'
+adding 'wotapi-0.4.5/wotapi/utils/request_factory.py'
+adding 'wotapi-0.4.5/wotapi/action/access_token.py'
+adding 'wotapi-0.4.5/wotapi/action/tankopedia_vehicles.py'
+adding 'wotapi-0.4.5/wotapi/action/tankopedia_achievements.py'
+adding 'wotapi-0.4.5/wotapi/action/__init__.py'
+adding 'wotapi-0.4.5/wotapi/action/tankopedia_info.py'
+adding 'wotapi-0.4.5/wotapi/action/player_vehicles_data.py'
+adding 'wotapi-0.4.5/wotapi/action/tankopedia_maps.py'
+adding 'wotapi-0.4.5/wotapi/action/tankopedia_badges.py'
+adding 'wotapi-0.4.5/wotapi/action/vehicles_achievements.py'
+adding 'wotapi-0.4.5/wotapi/action/player_achievements.py'
+adding 'wotapi-0.4.5/wotapi/action/vehicles_statistics.py'
+adding 'wotapi-0.4.5/wotapi/action/account_id.py'
+adding 'wotapi-0.4.5/wotapi/action/player_personal_data.py'
+adding 'wotapi-0.4.5/wotapi/orm/__init__.py'
+adding 'wotapi-0.4.5/wotapi/orm/data_model.py'
+adding 'wotapi-0.4.5/tests/unit'
+adding 'wotapi-0.4.5/tests/__init__.py'
+adding 'wotapi-0.4.5/tests/unit/orm'
+adding 'wotapi-0.4.5/tests/unit/test_wrapper.py'
+adding 'wotapi-0.4.5/tests/unit/__init__.py'
+adding 'wotapi-0.4.5/tests/unit/test_models.py'
+adding 'wotapi-0.4.5/tests/unit/test_logger.py'
+adding 'wotapi-0.4.5/tests/unit/orm/test_player_personal_data.py'
+adding 'wotapi-0.4.5/tests/unit/orm/__init__.py'
+adding 'wotapi-0.4.5/wotapi.egg-info/PKG-INFO'
+adding 'wotapi-0.4.5/wotapi.egg-info/not-zip-safe'
+adding 'wotapi-0.4.5/wotapi.egg-info/SOURCES.txt'
+adding 'wotapi-0.4.5/wotapi.egg-info/requires.txt'
+adding 'wotapi-0.4.5/wotapi.egg-info/top_level.txt'
+adding 'wotapi-0.4.5/wotapi.egg-info/dependency_links.txt'
+removing 'wotapi-0.4.5' (and everything under it)
