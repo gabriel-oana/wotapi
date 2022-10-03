@@ -291,5 +291,36 @@ class TestWrapper(unittest.TestCase):
         }
         return responses
 
+    @staticmethod
+    def mock_tankopedia_info():
+        responses = {"status": "ok", "meta": {"count": 7}, "data": {
+            "vehicle_crew_roles": {"loader": "Loader", "radioman": "Radio Operator", "driver": "Driver",
+                                   "gunner": "Gunner", "commander": "Commander"}, "tanks_updated_at": 1664338450,
+            "languages": {"ru": "Русский", "fr": "Français", "en": "English", "zh-tw": "繁體中文", "de": "Deutsch",
+                          "tr": "Türkçe", "ko": "한국어", "zh-cn": "简体中文", "es": "Español", "th": "ไทย",
+                          "vi": "Tiếng Việt", "cs": "Čeština", "pl": "Polski"},
+            "achievement_sections": {"memorial": {"name": "Commemorative Tokens", "order": 4},
+                                     "group": {"name": "Group Awards", "order": 3},
+                                     "action": {"name": "Special", "order": 6},
+                                     "battle": {"name": "Battle Heroes", "order": 0},
+                                     "epic": {"name": "Epic Medals", "order": 2},
+                                     "class": {"name": "Stage Awards", "order": 5},
+                                     "special": {"name": "Honorary Ranks", "order": 1}},
+            "vehicle_types": {"heavyTank": "Heavy Tank", "AT-SPG": "Tank Destroyer", "mediumTank": "Medium Tank",
+                              "lightTank": "Light Tank", "SPG": "SPG"},
+            "vehicle_nations": {"italy": "Italy", "usa": "U.S.A.", "czech": "Czechoslovakia", "poland": "Poland",
+                                "france": "France", "sweden": "Sweden", "ussr": "U.S.S.R.", "china": "China",
+                                "uk": "U.K.", "japan": "Japan", "germany": "Germany"}, "game_version": "1.18"}}
+        return responses
+
+    @staticmethod
+    def mock_tankopedia_maps():
+        responses = {"status": "ok", "meta": {"count": 16}, "data": {
+            "08_ruinberg": {"name_i18n": "Ruinberg", "camouflage_type": "summer",
+                            "description": "Some description",
+                            "arena_id": "08_ruinberg"}
+        }}
+        return responses
+
     def tearDown(self) -> None:
         os.remove(self.db_path + '/world_of_tanks.db')

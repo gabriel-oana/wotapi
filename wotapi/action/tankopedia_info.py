@@ -68,13 +68,14 @@ class TankopediaInfoData:
         clean_data = self._parse_data(raw_data=raw_data)
 
         if load_to_db:
+            db_loader = DBLoader(path=db_path)
             if load_once:
                 # Checks if the data is already existing in the database else loads it.
-                if DBLoader.check_if_data_exists(TankopediaInfoModel, db_path=db_path):
+                if db_loader.check_if_data_exists(TankopediaInfoModel):
                     logging.info('Tankopedia information data will not be loaded into the database.')
                 else:
-                    DBLoader.insert(TankopediaInfoModel, clean_data, db_path=db_path)
+                    db_loader.insert(TankopediaInfoModel, clean_data)
             else:
-                DBLoader.insert(TankopediaInfoModel, clean_data, db_path=db_path)
+                db_loader.insert(TankopediaInfoModel, clean_data)
 
         return clean_data
