@@ -85,13 +85,15 @@ class TankopediaAchievementsData:
         clean_data = self._parse_data(raw_data=raw_data)
 
         if load_to_db:
+            db_loader = DBLoader(path=db_path)
+
             if load_once:
                 # Checks if the data is already existing in the database else loads it.
-                if DBLoader.check_if_data_exists(TankopediaAchievementsModel, db_path=db_path):
+                if db_loader.check_if_data_exists(TankopediaAchievementsModel):
                     logging.info('Tankopedia achievements data will not be loaded into the database.')
                 else:
-                    DBLoader.insert(TankopediaAchievementsModel, clean_data, db_path=db_path)
+                    db_loader.insert(TankopediaAchievementsModel, clean_data)
             else:
-                DBLoader.insert(TankopediaAchievementsModel, clean_data, db_path=db_path)
+                db_loader.insert(TankopediaAchievementsModel, clean_data)
 
         return clean_data

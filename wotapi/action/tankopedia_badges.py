@@ -61,13 +61,14 @@ class TankopediaBadgesData:
         clean_data = self._parse_data(raw_data=raw_data, account_id=account_id)
 
         if load_to_db:
+            db_loader = DBLoader(path=db_path)
             if load_once:
                 # Checks if the data is already existing in the database else loads it.
-                if DBLoader.check_if_data_exists(TankopediaBadgesModel, db_path=db_path):
+                if db_loader.check_if_data_exists(TankopediaBadgesModel):
                     logging.info('Tankopedia badge data will not be loaded into the database.')
                 else:
-                    DBLoader.insert(TankopediaBadgesModel, clean_data, db_path=db_path)
+                    db_loader.insert(TankopediaBadgesModel, clean_data)
             else:
-                DBLoader.insert(TankopediaBadgesModel, clean_data, db_path=db_path)
+                db_loader.insert(TankopediaBadgesModel, clean_data)
 
         return clean_data

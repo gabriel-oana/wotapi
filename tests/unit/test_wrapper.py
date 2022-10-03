@@ -246,5 +246,50 @@ class TestWrapper(unittest.TestCase):
                          {"statistics": {"wins": 1, "battles": 1}, "mark_of_mastery": 1, "tank_id": 54865}]}}
         return response
 
+    @staticmethod
+    def mock_tankopedia_achievements():
+        response = {
+            "status": "ok",
+            "meta": {"count": 388},
+            "data": {
+                "crucialShotMedal": {
+                    "name": "crucialShotMedal",
+                    "outdated": False,
+                    "section": "special",
+                    "section_order": 1,
+                    "image_big": "http:\/\/api.worldoftanks.eu\/static\/2.71.0\/wot\/encyclopedia\/achievement\/big\/crucialShotMedal.png",
+                    "options": None,
+                    "hero_info": None,
+                    "name_i18n": "Crucial Shot",
+                    "order": 105,
+                    "type": "repeatable",
+                    "image": "http:\/\/api.worldoftanks.eu\/static\/2.71.0\/wot\/encyclopedia\/achievement\/crucialShotMedal.png",
+                    "condition": "• Win the battle. Newly received awards are added together. Can be obtained in Team Battles only.",
+                    "description": "In 20 battles, destroy the last enemy vehicle."
+                }
+            }
+        }
+        return response
+
+    @staticmethod
+    def mock_tankopedia_badges():
+        responses = {
+            "status": "ok",
+            "meta": {"count": 120},
+            "data": {
+                "1": {
+                    "images": {
+                        "medium_icon": "http://badge_1.png",
+                        "small_icon": "http://badge_1.png",
+                        "big_icon": "http://badge_1.png"
+                    },
+                    "badge_id": 1,
+                    "name": "Gold, Beta Season",
+                    "description": "Reach League I in Beta Season of the Ranked Battle mode."
+                }
+            }
+        }
+        return responses
+
     def tearDown(self) -> None:
         os.remove(self.db_path + '/world_of_tanks.db')
