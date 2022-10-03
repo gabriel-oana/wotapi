@@ -57,6 +57,7 @@ class PlayerVehiclesData:
         clean_data = self._parse_data(raw_data=raw_data, account_id=account_id)
 
         if load_to_db:
-            DBLoader.insert(PlayerPersonalVehiclesModel, clean_data, db_path=db_path)
+            db_loader = DBLoader(path=db_path)
+            db_loader.insert(PlayerPersonalVehiclesModel, clean_data)
 
         return clean_data

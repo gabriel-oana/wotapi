@@ -35,7 +35,7 @@ class PlayerPersonalData:
 
         details_data = [{
             "account_id": account_id,
-            "last_battle_time": account_data['last_battle_time'],
+            "last_battle_time": account_data.get('last_battle_time', None),
             "created_at": account_data['created_at'],
             "updated_at": account_data['updated_at'],
             "gold": account_data['private']['gold'],
@@ -122,8 +122,9 @@ class PlayerPersonalData:
         statistics = self._parse_statistics_data(raw_data, account_id=account_id)
 
         if load_to_db:
-            DBLoader.insert(PlayerPersonalDataDetailsModel, details, db_path=db_path)
-            DBLoader.insert(PlayerPersonalDataStatisticsModel, statistics, db_path=db_path)
+            db_loader = DBLoader(path=db_path)
+            db_loader.insert(PlayerPersonalDataDetailsModel, details)
+            db_loader.insert(PlayerPersonalDataStatisticsModel, statistics)
 
         # Return the dict with combined data
         result = [{
