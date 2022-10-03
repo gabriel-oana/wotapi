@@ -117,8 +117,9 @@ class VehicleStatisticsData:
         frags_data = self._parse_vehicle_frags(raw_data=raw_data, account_id=account_id)
 
         if load_to_db:
-            DBLoader.insert(VehiclesStatisticsModel, statistics_data, db_path=db_path)
-            DBLoader.insert(VehiclesFragsModel, frags_data, db_path=db_path)
+            db_loader = DBLoader(path=db_path)
+            db_loader.insert(VehiclesStatisticsModel, statistics_data)
+            db_loader.insert(VehiclesFragsModel, frags_data)
 
         clean_data = [{
             "statistics_data": statistics_data,
