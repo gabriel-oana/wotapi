@@ -29,16 +29,21 @@ pip install WotAPI
 
 ### 3. Usage
 
-```
-from worldoftanks import WotAPI
+```python
+from wotapi import WotAPI, REALM
+
+# Obtain the account id
+# Since this is a constant it can be executed only once to get the account_id
+wot = WotAPI(application_id='############', 
+             realm=REALM.eu)
+account_id = wot.get_account_id(nickname='username')
+
 
 wot = WotAPI(application_id='############',
-             account_id='##########',
+             account_id=account_id, 
              token='#########',
              realm='eu')
-```
 
-```
 # Extract Account Data
 wot.player_personal()
 wot.player_vehicles()
@@ -54,6 +59,10 @@ wot.tankopedia_badges(load_once=True)
 # Extract Player Vehicles Data
 wot.vehicle_achievements()
 wot.vehicle_statistics()
+
+# Renew access token
+new_token_data = wot.renew_token()
+print(new_token_data)
 ```
 
 
@@ -144,17 +153,15 @@ wot = WotAPI(application_id='####',
     
  
 ### 5. Development
+To further develop this package please follow the instructions below
+```shell
 
-##### Unittesting
-For development purposes, the unittests can be executed via: 
+# Install the virtual environments and packages
+python3 -m virtualenv .venv
+source .venv/bin/activate
+pip3 install -r requirements.txt
 
-```
-python3 -m unittest discover -v worldoftanks/tests
-```
-
-##### Coverage Tests
-
-```
-coverage run --source=worldoftanks -m unittest discover -s worldoftanks/tests
-coverage report -m
+# Run test suite
+# Tests contain unittests, coverage and linting
+tox
 ```
