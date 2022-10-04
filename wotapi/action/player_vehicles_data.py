@@ -1,28 +1,12 @@
 import logging
 
 from wotapi.helper.db_loader import DBLoader
-from wotapi.utils.api import API
 from wotapi.orm.data_model import PlayerPersonalVehiclesModel
-from wotapi.models.models import APISource
+from wotapi.models.models import APISource, REALM
+from wotapi.action.base_action import BaseAction
 
 
-class PlayerVehiclesData:
-
-    def __init__(self):
-        pass
-
-    @staticmethod
-    def _extract_data(application_id: str, account_id: str, token: str, realm: str) -> dict:
-        """
-        Extracts Data from the api
-        """
-
-        logging.info('Extracting player vehicles data')
-
-        wot = API(application_id=application_id, account_id=account_id, token=token, realm=realm)
-        raw_data = wot.get_data(source=APISource.player_vehicles_data)
-
-        return raw_data
+class PlayerVehiclesData(BaseAction):
 
     @staticmethod
     def _parse_data(raw_data: dict, account_id: str) -> list:
@@ -45,15 +29,21 @@ class PlayerVehiclesData:
 
         return clean_data
 
-    def etl_data(self, application_id: str, account_id: str, token: str, load_to_db: bool, realm: str, db_path: str) \
-            -> list:
+    def etl_data(self, application_id: str, account_id: str = None, token: str = None,
+                 realm: REALM = None, load_to_db: bool = False, db_path: str = None, **kwargs):
         """
         Combines all the above methods to be used as one command.
         Takes the details and the statistics data and loads it into dbsqlite.
         It also returns a combination of the data as a dictionary.
         """
 
-        raw_data = self._extract_data(account_id=account_id, application_id=application_id, token=token, realm=realm)
+        raw_data = self._extract_data(
+            account_id=account_id,
+            application_id=application_id,
+            token=token,
+            realm=realm,
+            source=APISource.player_vehicles_data
+        )
         clean_data = self._parse_data(raw_data=raw_data, account_id=account_id)
 
         if load_to_db:

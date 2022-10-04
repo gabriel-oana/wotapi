@@ -1,11 +1,11 @@
 import requests
-from wotapi.models.models import APISource
+from wotapi.models.models import REALM, APISource
 
 
 class RequestFactory:
 
-    def __init__(self, application_id: str, realm: str, account_id: str = None, token: str = None,
-                 source: str = APISource):
+    def __init__(self, application_id: str, realm: REALM, account_id: str = None, token: str = None,
+                 source: APISource = APISource):
         self._account_id = account_id
         self._application_id = application_id
         self._access_token = token
@@ -13,7 +13,7 @@ class RequestFactory:
         self._source = source
         self._BASE_URL = 'https://api.worldoftanks.{}/wot'.format(realm)
 
-    def prepare_request(self, nickname: str = None):
+    def prepare_request(self, nickname: str = None) -> requests.PreparedRequest:
         if self._source == APISource.account_id:
             prepped_request = self._get_account_id(nickname=nickname)
         elif self._source == APISource.renew_access_token:
@@ -44,12 +44,12 @@ class RequestFactory:
         return prepped_request
 
     @staticmethod
-    def _prepare_request(url: str, method: str, params: dict = None, data: dict = None):
+    def _prepare_request(url: str, method: str, params: dict = None, data: dict = None) -> requests.PreparedRequest:
         req = requests.Request(method, url=url, params=params, data=data)
         prepped_request = req.prepare()
         return prepped_request
 
-    def _get_account_id(self, nickname: str) -> object:
+    def _get_account_id(self, nickname: str) -> requests.PreparedRequest:
         """
         Gets the account id of a nickname
         """
@@ -63,7 +63,7 @@ class RequestFactory:
         )
         return req
 
-    def _renew_access_token(self) -> object:
+    def _renew_access_token(self) -> requests.PreparedRequest:
         """
         Renews any access token
         """
@@ -77,7 +77,7 @@ class RequestFactory:
         )
         return req
 
-    def _vehicle_statistics(self) -> object:
+    def _vehicle_statistics(self) -> requests.PreparedRequest:
         """
         Extracts vehicles statistics in the player vehicle section.
         """
@@ -92,7 +92,7 @@ class RequestFactory:
         )
         return req
 
-    def _vehicle_achievements(self) -> object:
+    def _vehicle_achievements(self) -> requests.PreparedRequest:
         """
         Extracts vehicles statistics in the player vehicle section.
         """
@@ -107,7 +107,7 @@ class RequestFactory:
         )
         return req
 
-    def _player_personal(self) -> object:
+    def _player_personal(self) -> requests.PreparedRequest:
         """
         Extracts player personal data from the accounts section.
         """
@@ -122,7 +122,7 @@ class RequestFactory:
         )
         return req
 
-    def _player_vehicles(self) -> object:
+    def _player_vehicles(self) -> requests.PreparedRequest:
         """
         Extracts player vehicle data from the accounts section.
         """
@@ -137,7 +137,7 @@ class RequestFactory:
         )
         return req
 
-    def _player_achievements(self) -> object:
+    def _player_achievements(self) -> requests.PreparedRequest:
         """
         Extracts player achievements data from the accounts section.
         """
@@ -151,7 +151,7 @@ class RequestFactory:
         )
         return req
 
-    def _tankopedia_vehicles(self) -> object:
+    def _tankopedia_vehicles(self) -> requests.PreparedRequest:
         """
         Extracts tankopedia vehicles data from the accounts section.
         """
@@ -164,7 +164,7 @@ class RequestFactory:
         )
         return req
 
-    def _tankopedia_achievements(self) -> object:
+    def _tankopedia_achievements(self) -> requests.PreparedRequest:
         """
         Extracts tankopedia achievements data from the accounts section.
         """
@@ -177,7 +177,7 @@ class RequestFactory:
         )
         return req
 
-    def _tankopedia_information(self) -> object:
+    def _tankopedia_information(self) -> requests.PreparedRequest:
         """
         Extracts tankopedia achievements data from the accounts section.
         """
@@ -190,7 +190,7 @@ class RequestFactory:
         )
         return req
 
-    def _tankopedia_maps(self) -> object:
+    def _tankopedia_maps(self) -> requests.PreparedRequest:
         """
         Extracts tankopedia achievements data from the accounts section.
         """
@@ -203,7 +203,7 @@ class RequestFactory:
         )
         return req
 
-    def _tankopedia_badges(self) -> object:
+    def _tankopedia_badges(self) -> requests.PreparedRequest:
         """
         Extracts tankopedia badges.
         """

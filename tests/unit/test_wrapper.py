@@ -14,7 +14,7 @@ class TestWrapper(unittest.TestCase):
         self.test_token = 'mock_token'
         self.test_realm = REALM.eu
 
-        self.db_path = f'tests'
+        self.db_path = 'tests'
         self.engine = create_db_engine(path=self.db_path)
         self.db_loader = DBLoader(db_engine=self.engine)
         DataModel.create_tables(engine=self.engine)
