@@ -1,0 +1,26 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "mock_account_id": [
+      {
+        "statistics": {
+          "wins": 454,
+          "battles": 921
+        },
+        "mark_of_mastery": 4,
+        "tank_id": 8993
+      },
+      {
+        "statistics": {
+          "wins": 1,
+          "battles": 1
+        },
+        "mark_of_mastery": 1,
+        "tank_id": 54865
+      }
+    ]
+  }
+}

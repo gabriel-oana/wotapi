@@ -12,7 +12,7 @@ class TestVehiclesStatisticsData(TestWrapper):
         responses.add(
             responses.GET,
             'https://api.worldoftanks.eu/wot/tanks/stats/',
-            json=self.mock_response_vehicles_statistics(account_id=self.test_account_id),
+            json=self.mock_response_vehicles_statistics(),
             status=200
         )
 
@@ -309,7 +309,7 @@ class TestVehiclesStatisticsData(TestWrapper):
         responses.add(
             responses.GET,
             'https://api.worldoftanks.eu/wot/tanks/stats/',
-            json=self.mock_response_vehicles_statistics(account_id=self.test_account_id),
+            json=self.mock_response_vehicles_statistics(),
             status=200
         )
 

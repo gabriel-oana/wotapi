@@ -28,9 +28,9 @@ class TestTankopediaVehiclesData(TestWrapper):
         )
         print(data)
         expected_data = [{'tank_id': 1, 'is_wheeled': False, 'is_premium': False, 'tag': 'R04_T-34',
-                          'small_icon': 'http:\\/\\/api.worldoftanks.eu\\/static\\/2.71.0\\/wot\\/encyclopedia\\/vehicle\\/small\\/ussr-R04_T-34.png',
-                          'contour_icon': 'http:\\/\\/api.worldoftanks.eu\\/static\\/2.71.0\\/wot\\/encyclopedia\\/vehicle\\/contour\\/ussr-R04_T-34.png',
-                          'big_icon': 'http:\\/\\/api.worldoftanks.eu\\/static\\/2.71.0\\/wot\\/encyclopedia\\/vehicle\\/ussr-R04_T-34.png',
+                          'small_icon': 'http://api.worldoftanks.eu/static/2.71.0/wot/encyclopedia/vehicle/small/ussr-R04_T-34.png',
+                          'contour_icon': 'http://api.worldoftanks.eu/static/2.71.0/wot/encyclopedia/vehicle/contour/ussr-R04_T-34.png',
+                          'big_icon': 'http://api.worldoftanks.eu/static/2.71.0/wot/encyclopedia/vehicle/ussr-R04_T-34.png',
                           'type': 'mediumTank',
                           'description': 'The legend of the Soviet armored forces and the most widely-produced Soviet tank of World War II, with a total of 33,805 vehicles manufactured. Three variants of this model were produced at several Soviet factories from 1940 through 1944.',
                           'short_name': 'T-34', 'nation': 'ussr', 'tier': 5, 'is_gift': False, 'name': 'T-34',

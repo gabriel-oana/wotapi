@@ -26,14 +26,19 @@ class TestTankopediaAchievementsData(TestWrapper):
             db_path=os.getcwd(),
             load_once=False
         )
-
-        expected_data = [{
-            'name': 'crucialShotMedal', 'outdated': False, 'section': 'special', 'section_order': 1,
-            'image_big': 'http:\\/\\/api.worldoftanks.eu\\/static\\/2.71.0\\/wot\\/encyclopedia\\/achievement\\/big\\/crucialShotMedal.png',
-            'hero_info': None, 'name_i18n': 'Crucial Shot', 'order': 105, 'type': 'repeatable',
-            'image': 'http:\\/\\/api.worldoftanks.eu\\/static\\/2.71.0\\/wot\\/encyclopedia\\/achievement\\/crucialShotMedal.png',
-            'condition': ' Win the battle. Newly received awards are added together. Can be obtained in Team Battles only.',
-            'description': 'In 20 battles, destroy the last enemy vehicle.'}]
+        expected_data = [{'name': 'crucialShotMedal', 'outdated': False, 'section': 'special', 'section_order': 1,
+                          'image_big': 'http://api.worldoftanks.eu/static/2.71.0/wot/encyclopedia/achievement/big/crucialShotMedal.png',
+                          'hero_info': None, 'name_i18n': 'Crucial Shot', 'order': 105, 'type': 'repeatable',
+                          'image': 'http://api.worldoftanks.eu/static/2.71.0/wot/encyclopedia/achievement/crucialShotMedal.png',
+                          'condition': ' Win the battle.\n Newly received awards are added together.\n Can be obtained in Team Battles only.',
+                          'description': 'In 20 battles, destroy the last enemy vehicle.'},
+                         {'name': 'Mastery Badge: "Class III"', 'outdated': False, 'section': 'class',
+                          'section_order': 5,
+                          'image_big': 'http://api.worldoftanks.eu/static/2.71.0/wot/encyclopedia/achievement/markOfMastery1.png',
+                          'hero_info': None, 'name_i18n': 'Mastery Badge: ""', 'order': -1, 'type': 'class',
+                          'image': 'http://api.worldoftanks.eu/static/2.71.0/wot/encyclopedia/achievement/markOfMastery1.png',
+                          'condition': ' Statistics show the maximum rank\nof mastery.\n A newly received current rank is displayed\nin the battle results window.\n Can be obtained in Random Battles only.',
+                          'description': 'Awarded for mastery in controlling an armored\nvehicle. To qualify, a player must earn more\nexperience in a battle than the average highest\nexperience of 50% players who have fought\nin this vehicle for the previous 7 days.'}]
 
         self.assertListEqual(data, expected_data)
 

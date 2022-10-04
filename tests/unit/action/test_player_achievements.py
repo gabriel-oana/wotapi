@@ -12,7 +12,7 @@ class TestPlayerAchievements(TestWrapper):
         responses.add(
             responses.GET,
             'https://api.worldoftanks.eu/wot/account/achievements/',
-            json=self.mock_response_player_achievements(account_id=self.test_account_id),
+            json=self.mock_response_player_achievements(),
             status=200
         )
 
@@ -37,7 +37,7 @@ class TestPlayerAchievements(TestWrapper):
         responses.add(
             responses.GET,
             'https://api.worldoftanks.eu/wot/account/achievements/',
-            json=self.mock_response_player_achievements(account_id=self.test_account_id),
+            json=self.mock_response_player_achievements(),
             status=200
         )
 

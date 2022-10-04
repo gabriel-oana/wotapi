@@ -11,7 +11,7 @@ class TestRenewAccessToken(TestWrapper):
         responses.add(
             responses.POST,
             'https://api.worldoftanks.eu/wot/auth/prolongate/',
-            json=self.mock_renew_access_token(account_id=self.test_account_id),
+            json=self.mock_renew_access_token(),
             status=200
         )
 
