@@ -1,9 +1,13 @@
-[![pipeline status](https://gitlab.com/gabriel_oana/worldoftanks/badges/master/pipeline.svg)](https://gitlab.com/gabriel_oana/worldoftanks)
-[![pipeline status](https://gitlab.com/gabriel_oana/worldoftanks/badges/master/coverage.svg)](https://gitlab.com/gabriel_oana/worldoftanks)
+<span><img src="https://img.shields.io/github/workflow/status/gabriel-oana/wotapi/Tests">
+<img src="https://img.shields.io/github/languages/top/gabriel-oana/wotapi">
+<img src="https://img.shields.io/pypi/pyversions/wotapi">
+<img src="https://img.shields.io/pypi/v/wotapi">
+<img src="https://img.shields.io/badge/linting-pylint-green">
+[![Downloads](https://pepy.tech/badge/wotapi)](https://pepy.tech/project/wotapi)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/wotapi)](https://gitlab.com/gabriel_oana/worldoftanks)
-
-
+<img src="https://img.shields.io/pypi/dm/wotapi?label=pypi%20downloads">
+[![codecov](https://codecov.io/gh/gabriel-oana/wotapi/branch/test/badge/graph/badge.svg?token=5BW32QG1KJ)](https://codecov.io/gh/gabriel-oana/wotapi)
+</span>
 
 # World of Tanks - API (PC)
 
