@@ -21,3 +21,4 @@ env
 tester.py
 .tox
 .pytest_cache
+coverage.xml
