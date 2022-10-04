@@ -22,9 +22,9 @@ from wotapi.action.vehicles_achievements import VehicleAchievementsData
 
 class WotAPI:
 
-    def __init__(self, application_id: str, account_id: str, token: str, realm: Union[str, REALM], quietly: bool = True,
-                 logging_enabled: bool = False, log_level: str = "WARNING", load_to_db: bool = True,
-                 db_path: str = os.getcwd()):
+    def __init__(self, application_id: str, realm: Union[str, REALM], account_id: str = None, token: str = None,
+                 quietly: bool = True, logging_enabled: bool = False, log_level: str = "WARNING",
+                 load_to_db: bool = True, db_path: str = os.getcwd()):
         if logging_enabled:
             self.log_level = create_logger(log_level)
         self.quietly = quietly
