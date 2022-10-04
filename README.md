@@ -6,7 +6,7 @@
 [![Downloads](https://pepy.tech/badge/wotapi)](https://pepy.tech/project/wotapi)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 <img src="https://img.shields.io/pypi/dm/wotapi?label=pypi%20downloads">
-[![codecov](https://codecov.io/gh/gabriel-oana/wotapi/branch/test/badge/graph/badge.svg?token=5BW32QG1KJ)](https://codecov.io/gh/gabriel-oana/wotapi)
+[![codecov](https://codecov.io/gh/gabriel-oana/wotapi/branch/main/graph/badge.svg?token=YASHY79YAF)](https://codecov.io/gh/gabriel-oana/wotapi)
 </span>
 
 # World of Tanks - API (PC)
