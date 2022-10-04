@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "mock_account_id": [
+      {
+        "achievements": {
+          "medalCarius": 4,
+          "titleSniper": 14,
+          "markOfMastery": 1,
+          "armorPiercer": 14
+        },
+        "series": {
+          "armorPiercer": 0,
+          "aimer": 0,
+          "titleSniper": 10,
+          "deathTrack": 0,
+          "invincible": 0,
+          "victoryMarch": 0,
+          "EFC2016": 0,
+          "diehard": 0,
+          "WFC2014": 0,
+          "tacticalBreakthrough": 0,
+          "handOfDeath": 0
+        },
+        "max_series": {
+          "armorPiercer": 14,
+          "aimer": 0,
+          "titleSniper": 14,
+          "deathTrack": 0,
+          "invincible": 1,
+          "victoryMarch": 0,
+          "EFC2016": 0,
+          "diehard": 1,
+          "WFC2014": 0,
+          "tacticalBreakthrough": 0,
+          "handOfDeath": 1
+        },
+        "account_id": 508670392,
+        "tank_id": 8257
+      }
+    ]
+  }
+}

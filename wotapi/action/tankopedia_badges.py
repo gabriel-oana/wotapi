@@ -1,28 +1,12 @@
 import logging
 
 from wotapi.helper.db_loader import DBLoader
-from wotapi.utils.api import API
 from wotapi.orm.data_model import TankopediaBadgesModel
-from wotapi.models.models import APISource
+from wotapi.models.models import APISource, REALM
+from wotapi.action.base_action import BaseAction
 
 
-class TankopediaBadgesData:
-
-    def __init__(self):
-        pass
-
-    @staticmethod
-    def _extract_data(application_id: str, account_id: str, token: str, realm: str) -> dict:
-        """
-        Extracts Data from the api
-        """
-
-        logging.info('Extracting tankopedia badges')
-
-        wot = API(application_id=application_id, account_id=account_id, token=token, realm=realm)
-        raw_data = wot.get_data(source=APISource.tankopedia_badges)
-
-        return raw_data
+class TankopediaBadgesData(BaseAction):
 
     @staticmethod
     def _parse_data(raw_data: dict, account_id: str) -> list:
@@ -49,25 +33,27 @@ class TankopediaBadgesData:
 
         return clean_data
 
-    def etl_data(self, application_id: str, account_id: str, token: str, load_to_db: bool, realm: str, load_once: bool,
-                 db_path: str) -> list:
+    def etl_data(self, application_id: str, account_id: str = None, token: str = None,
+                 realm: REALM = None, load_to_db: bool = False, db_path: str = None, load_once: bool = False):
         """
         Combines all the above methods to be used as one command.
         Takes the details and the statistics data and loads it into dbsqlite.
         It also returns a combination of the data as a dictionary.
         """
 
-        raw_data = self._extract_data(account_id=account_id, application_id=application_id, token=token, realm=realm)
+        raw_data = self._extract_data(account_id=account_id, application_id=application_id, token=token, realm=realm,
+                                      source=APISource.tankopedia_badges)
         clean_data = self._parse_data(raw_data=raw_data, account_id=account_id)
 
         if load_to_db:
+            db_loader = DBLoader(path=db_path)
             if load_once:
                 # Checks if the data is already existing in the database else loads it.
-                if DBLoader.check_if_data_exists(TankopediaBadgesModel, db_path=db_path):
+                if db_loader.check_if_data_exists(TankopediaBadgesModel):
                     logging.info('Tankopedia badge data will not be loaded into the database.')
                 else:
-                    DBLoader.insert(TankopediaBadgesModel, clean_data, db_path=db_path)
+                    db_loader.insert(TankopediaBadgesModel, clean_data)
             else:
-                DBLoader.insert(TankopediaBadgesModel, clean_data, db_path=db_path)
+                db_loader.insert(TankopediaBadgesModel, clean_data)
 
         return clean_data

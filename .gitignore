@@ -19,3 +19,6 @@ app.log
 world_of_tanks.db
 env
 tester.py
+.tox
+.pytest_cache
+coverage.xml

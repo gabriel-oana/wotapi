@@ -1,0 +1,16 @@
+{
+    "status": "ok",
+    "meta": {"count": 120},
+    "data": {
+        "1": {
+            "images": {
+                "medium_icon": "http://badge_1.png",
+                "small_icon": "http://badge_1.png",
+                "big_icon": "http://badge_1.png"
+            },
+            "badge_id": 1,
+            "name": "Gold, Beta Season",
+            "description": "Reach League I in Beta Season of the Ranked Battle mode."
+        }
+    }
+}

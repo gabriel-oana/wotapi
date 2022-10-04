@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 16
+  },
+  "data": {
+    "08_ruinberg": {
+      "name_i18n": "Ruinberg",
+      "camouflage_type": "summer",
+      "description": "Some description",
+      "arena_id": "08_ruinberg"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "mock_account_id": {
+      "achievements": {
+        "medalCarius": 1
+      },
+      "frags": {
+        "crucialShotMedal": 3
+      },
+      "max_series": {
+        "armorPiercer": 23
+      }
+    }
+  }
+}
